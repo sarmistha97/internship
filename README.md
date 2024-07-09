@@ -1,4 +1,0 @@
-# internship
-hgffyukdgayu
-futry
-gdettuihiu
