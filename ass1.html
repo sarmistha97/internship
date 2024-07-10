@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn</title>
+    <link rel="stylesheet" href="web.css">
+</head>
+
+<body>
+  <div class="main">
+    <div class="nav">
+            <img src="https://render.fineartamerica.com/images/images-profile-flow/400/images-medium-large-5/awesome-solitude-bess-hamiti.jpg" alt="logo" class="logo">
+            <button type="button" class="navbar">
+                <a href="https://github.com/login" target="_main">home</a>             
+                <a href="https://www.youtube.com/" target="_main">login</a>   
+                <a href="https://www.youtube.com/" target="_main">signup</a>   
+            </button>
+        </div>
+</body>
+</html>
+<script>
+  let body = document.querySelector("body");
+  let main = document.querySelector("div");
+  let nav = document.querySelector("div");
+
+//let home = document.createElement("");
+// let main = document.createElement("div");
+// main.className = "main";
+// let nav = document.createElement("div");
+// nav.className ="nav";
+// let link = document.createElement("button");
+// link.src="https://github.com/login";
+// main.append(nav);
+body.append(main);
+    let arr = [];
+    let inp1 = document.createElement("input");
+    let inp2 = document.createElement("input");
+    let btn = document.createElement("button");
+    btn.innerText = "submit";
+    btn.addEventListener("click",submit);
+    inp1.className=inp2.className="inp1";
+    let div = document.createElement("div");
+    div.className="view";
+    main.append(inp1,inp2,btn);
+    main.append(div);
+   
+    
+    function submit(){
+        let obj ={ //keyname:value
+            data: inp1.value,
+            img : inp2.value
+        }
+        arr.push(obj);
+        display();
+        console.log(arr);
+    }
+
+    function display(){
+        div.innerHTML = "";
+        for(let i =0;i<arr.length;i++){
+          let para = document.createElement("div");
+          let img = document.createElement("img");
+          let prod = document.createElement("div");
+          let image = document.createElement("div");
+          prod.classname ="prod";
+          para.classname ="data";
+          div.append(prod);
+          para.innerText = arr[i].data;
+          img.src = arr[i].img;
+          image.append(img);
+          if(i%2 == 0){
+            prod.append(para,image);
+          } else{
+            prod.append(image,para);
+          }
+        }
+        div.append(prod);
+    }
+
+</script>
