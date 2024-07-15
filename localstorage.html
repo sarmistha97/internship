@@ -1,29 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>localstorage</title>
+    <title>local storage</title>
 </head>
 <body>
-    <h2>hrllo</h2>
-    <button onclick="set()"> set </button>
-    <button onclick="get()"> get </button>
+    <input type="text" placeholder="enter" id="inp">
+    <button onclick="save()"> save </button>
+    <button onclick="getFromLocal()"> get </button>
 </body>
 </html>
 <script>
-    function set(){
-        let array1=[[1,2,3,4],5,6,7,8]
-        localStorage.setItem("name","saraaa")
-        localStorage.setItem("add","mkhkkhgg")
-        localStorage.setItem("phone",68761)
-        localStorage.setItem("array1",JSON.stringify(array1))
-     }
-     function get(){
-        arr = JSON.parse(localStorage.getItem("array1"))
-        n =localStorage.getItem("name")
-        p=localStorage.getItem("phone")
-        a=localStorage.getItem("add")
-        console.log(n,p,a,arr);
-     }
+
+    function save(){
+        let inp = document.querySelector("#inp");
+        localStorage.setItem("input",JSON.stringify(inp.value));
+    };
+
+    function getFromLocal(){
+        let data =JSON.parse(localStorage.getItem("input")) || [empty]
+        // for(let i=0;i<data.length;i++){
+            console.log(data);
+        // }
+    };
 </script>

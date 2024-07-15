@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signUp</title>
+</head>
+<body>
+    <a  href="addProd.html">add</a>
+    <a href="homepage.html">home</a>
+    <a href="login.html">login</a>
+    <a href="signup.html">signUp</a>
+    <br>
+    <input type="text" id="username">
+    <input type="password" name="" id="pass">
+    <button onclick="signUp()">Sign up</button>
+
+    <script>
+        let indata =JSON.parse(localStorage.getItem("signarr")) || [];
+        console.log(indata);
+        let flag = false;
+        let user = document.querySelector("#username");
+        let pass = document.querySelector("#pass");
+    
+    function signUp(){
+        let obj = {
+            name: user.value,
+            pass: pass.value
+        }
+    
+        for(let i=0;i<indata.length;i++)
+        {
+            if(indata[i].username == obj.name){
+                flag = true;
+                alert("user already exists")
+            }else{
+                flag = false;
+            }
+        }
+    
+        if(flag === false){
+                indata.push(obj)
+                localStorage.setItem("signarr",JSON.stringify(indata))  
+            }
+         
+            console.log(indata);
+        }
+    
+    </script>
+</body>
+</html>
