@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <a  href="addProd.html">add</a>
+    <a href="homepage.html">home</a>
+    <a href="login.html">login</a>
+    <a href="signup.html">signUp</a>
+    <br>
+    <h1>LOGIN</h1>
+    <input type="text" id="username">
+    <input type="password" name="" id="pass">
+    <button onclick="signUp()">Sign up</button>
+    <script>
+        let indata =JSON.parse(localStorage.getItem("signarr")) || [];
+        let flag = false;
+        let user = document.querySelector("#username");
+        let pass = document.querySelector("#pass");
+        console.log(indata);
+
+        function login(){
+            for(let i =0; i<indata.length;i++){
+                if(indata.username ===name.value && indata.pass === pass.value){
+                    flag = true;
+                }
+            }
+            if(flage === true){
+                alert("login successful")
+                window.open("./homepage.html",homepage)
+            }else {
+                alert("login failed");
+            } 
+            flag = false; 
+        }
+    </script>
+</body>
+</html>
